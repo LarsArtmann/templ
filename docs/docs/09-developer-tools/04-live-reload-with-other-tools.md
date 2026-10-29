@@ -172,6 +172,7 @@ mux.Handle("/assets/",
     http.StripPrefix("/assets", 
       http.FileServer(http.Dir("assets")))))
 ```
+
 :::
 
 ## Putting it all together

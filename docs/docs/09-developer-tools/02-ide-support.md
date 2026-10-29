@@ -16,10 +16,10 @@ templ plugin:
 
 ```json
 {
-    "editor.formatOnSave": true,
-    "[templ]": {
-        "editor.defaultFormatter": "a-h.templ"
-    },
+  "editor.formatOnSave": true,
+  "[templ]": {
+    "editor.defaultFormatter": "a-h.templ"
+  },
 }
 ```
 
@@ -34,7 +34,8 @@ Include the following to the settings.json in order to enable autocompletion for
   }
 }
 ```
-:::note 
+
+:::note
 Tailwind language servers require a tailwind.config.js file to be present in the root of your project. You can create a new config file with `npx tailwindcss init`, or use samples available at https://tailwindcss.com/docs/configuration
 :::
 
@@ -78,7 +79,7 @@ for _, lsp in ipairs(servers) do
 end
 ```
 
-In Neovim, you can use the `:LspInfo` command to check which Language Servers (if any) are running. If the expected language server has not started, it could be due to the unregistered templ file extension. 
+In Neovim, you can use the `:LspInfo` command to check which Language Servers (if any) are running. If the expected language server has not started, it could be due to the unregistered templ file extension.
 
 To resolve this issue, add the following code to your configuration. This is also necessary for other LSPs to "pick up" on .templ files.
 
@@ -95,9 +96,9 @@ IntelliJ / GoLand language support for templ:
 
 ##### Other LSPs within .templ files
 
-These LSPs can be used *in conjunction* with the templ lsp and tree-sitter. Here's how to set them up.
+These LSPs can be used _in conjunction_ with the templ lsp and tree-sitter. Here's how to set them up.
 
-[html-lsp](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#html) - First make sure you have it installed `:LspInstall html` or find it on the `:Mason` list. 
+[html-lsp](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#html) - First make sure you have it installed `:LspInstall html` or find it on the `:Mason` list.
 
 ```lua
 lspconfig.html.setup({
@@ -155,6 +156,7 @@ With the templ LSP installed and configured, you can use the following code snip
 ```lua
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ" }, callback = vim.lsp.buf.format })
 ```
+
 `BufWritePre` means that the callback gets ran after you call `:write`.
 
 If you have multiple LSPs attached to the same buffer, and you have issues with `vim.lsp.buf.format`, you can use this snippet to run `templ fmt` in the same way that you might from the command line.
@@ -192,7 +194,7 @@ local on_attach = function(client, bufnr)
 end
 ```
 
-To make this `custom_format` run on save, make the same autocmd from before and replace the callback with `custom_format`. 
+To make this `custom_format` run on save, make the same autocmd from before and replace the callback with `custom_format`.
 
 ```lua
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ" }, callback = custom_format })
@@ -230,27 +232,27 @@ If you cannot run `:TSInstall templ`, ensure you have an up-to-date version of [
 If you still don't get syntax highlighting after it's installed, try running `:TSBufEnable highlight`. If you find that you need to do this every time you open a .templ file, you can run this autocmd to do it for your neovim configuration.
 
 ```lua
-vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.templ", callback = function() vim.cmd("TSBufEnable highlight") end }) 
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.templ", callback = function() vim.cmd("TSBufEnable highlight") end })
 ```
 
 ### Minimal Config
 
 Minimal config with the following features (useful for debugging):
+
 - [lazy-vim](https://github.com/folke/lazy.nvim): neovim package manager
 - [lsp config](https://github.com/neovim/nvim-lspconfig)
-    - templ-lsp
-    - html-lsp
-    - htmx-lsp
-    - tailwind-lsp
+  - templ-lsp
+  - html-lsp
+  - htmx-lsp
+  - tailwind-lsp
 - [cmp](https://github.com/hrsh7th/nvim-cmp): for autocompletion
 - [tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter): for synx highlighting
-    - [tree sitter templ](https://github.com/vrischmann/tree-sitter-templ)
+  - [tree sitter templ](https://github.com/vrischmann/tree-sitter-templ)
 
 To use this config:
 
-* As a permanent setup: Create/replace `init.lua` in your config folder (`~/.config/nvim/`)
-* As a temporary setup: create a new folder in your `.config` (e.g.`~/.config/nvim_test`) and tell neovim to start up with that as the nvim appname `NVIM_APPNAME=nvim_test nvim` (see [neovim docs](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME) for further explanation.
-
+- As a permanent setup: Create/replace `init.lua` in your config folder (`~/.config/nvim/`)
+- As a temporary setup: create a new folder in your `.config` (e.g.`~/.config/nvim_test`) and tell neovim to start up with that as the nvim appname `NVIM_APPNAME=nvim_test nvim` (see [neovim docs](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME) for further explanation.
 
 ```lua
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -414,8 +416,8 @@ _Optional_: If you'd like indentation to better match Go outside of `templ` bloc
 Plug 'iefserge/templ.vim'
 ```
 
-* This plugin also adds [tcomment_vim](https://github.com/tomtom/tcomment_vim) support.
-* This is a fork of [joerdav/templ.vim](https://github.com/Joe-Davidson1802/templ.vim).
+- This plugin also adds [tcomment_vim](https://github.com/tomtom/tcomment_vim) support.
+- This is a fork of [joerdav/templ.vim](https://github.com/Joe-Davidson1802/templ.vim).
 
 ## Helix
 
@@ -451,16 +453,15 @@ You should see 3 lines returned, showing the location of each binary:
 
 Run `templ lsp --help`, you should see help text.
 
-* If you can't run the `templ` command at the command line:
-  * Check that the `templ` binary is within a directory that's in your path (`echo $PATH` for Linux/Mac/WSL, `$env:path` for Powershell).
-  * Update your profile to ensure that the change to your path applies to new shells and processes.
-    * On MacOS / Linux, you may need to update your `~/.zsh_profile`, `~/.bash_profile` or `~/.profile` file.
-    * On Windows, you will need to use the "Environment Variables" dialog. For WSL, use the Linux config.
-  * On MacOS / Linux, check that the file is executable and resolve it with `chmod +x /path/to/templ`.
-  * On MacOS, you might need to go through the steps at https://support.apple.com/en-gb/guide/mac-help/mh40616/mac to enable binaries from an "unidentified developer" to run.
-* If you're running VS Code using Windows Subsystem for Linux (WSL), then templ must also be installed within the WSL environment, not just inside your Windows environment.
-* If you're running VS Code in a Devcontainer, it must be installed in there.
-
+- If you can't run the `templ` command at the command line:
+  - Check that the `templ` binary is within a directory that's in your path (`echo $PATH` for Linux/Mac/WSL, `$env:path` for Powershell).
+  - Update your profile to ensure that the change to your path applies to new shells and processes.
+    - On MacOS / Linux, you may need to update your `~/.zsh_profile`, `~/.bash_profile` or `~/.profile` file.
+    - On Windows, you will need to use the "Environment Variables" dialog. For WSL, use the Linux config.
+  - On MacOS / Linux, check that the file is executable and resolve it with `chmod +x /path/to/templ`.
+  - On MacOS, you might need to go through the steps at https://support.apple.com/en-gb/guide/mac-help/mh40616/mac to enable binaries from an "unidentified developer" to run.
+- If you're running VS Code using Windows Subsystem for Linux (WSL), then templ must also be installed within the WSL environment, not just inside your Windows environment.
+- If you're running VS Code in a Devcontainer, it must be installed in there.
 
 ### Enable LSP logging
 

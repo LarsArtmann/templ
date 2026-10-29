@@ -8,9 +8,9 @@ These Go statements can be used to conditionally render child elements, or to it
 
 For individual implementation guides see:
 
-* [if/else](/syntax-and-usage/if-else)
-* [switch](/syntax-and-usage/switch)
-* [for loops](/syntax-and-usage/loops)
+- [if/else](/syntax-and-usage/if-else)
+- [switch](/syntax-and-usage/switch)
+- [for loops](/syntax-and-usage/loops)
 
 ## if/switch/for within text
 
@@ -32,8 +32,8 @@ templ showHelloIfTrue(b bool) {
 
 If you need to start a text block with the words `if`, `switch`, or `for`:
 
-* Use a Go string expression.
-* Capitalise `if`, `switch`, or `for`.
+- Use a Go string expression.
+- Capitalise `if`, `switch`, or `for`.
 
 ```templ title="paragraph.templ"
 package main
@@ -85,8 +85,8 @@ This also applies to `for` and `switch` statements.
 
 To resolve the issue:
 
-* Use a Go string expression.
-* Capitalise `if`, `switch`, or `for`.
+- Use a Go string expression.
+- Capitalise `if`, `switch`, or `for`.
 
 ```templ title="paragraph.templ"
 package main

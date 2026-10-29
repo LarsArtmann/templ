@@ -45,7 +45,6 @@ The data passed to the `alert` function is JSON encoded, so if `data.Message` wa
 
 HTML element `on*` attributes pass an event object to the function. To pass the event object to a function, use `templ.JSExpression`.
 
-
 :::warning
 `templ.JSExpression` bypasses JSON encoding, so the string value is output directly to the HTML - this can be a security risk if the data is not trusted, e.g. the data is user input, not a compile-time constant.
 :::
@@ -326,6 +325,7 @@ templ hello(label, name string) {
   </div>
 }
 ```
+
 :::
 
 ## Importing scripts
@@ -371,6 +371,7 @@ mux := http.NewServeMux()
 mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 http.ListenAndServe("localhost:8080", mux)
 ```
+
 :::
 
 ## Working with NPM projects

@@ -40,10 +40,10 @@ Context is not strongly typed, and errors only show at runtime, not compile time
 
 Some data is useful for many components throughout the hierarchy, for example:
 
-* Whether the current user is logged in or not.
-* The username of the current user.
-* The locale of the user (used for localization).
-* Theme preferences (e.g. light vs dark).
+- Whether the current user is logged in or not.
+- The username of the current user.
+- The locale of the user (used for localization).
+- Theme preferences (e.g. light vs dark).
 
 One way to pass this information is to create a `Settings` struct and pass it through the stack as a parameter.
 
@@ -178,4 +178,3 @@ If you write a component that relies on a context variable that doesn't exist, o
 
 This means that if your component relies on HTTP middleware that sets the context, and you forget to add it, your component will panic at runtime.
 :::
-

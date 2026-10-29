@@ -4,7 +4,7 @@ builds:
   - env:
       - CGO_ENABLED=0
     dir: cmd/templ
-    mod_timestamp: '{{ .CommitTimestamp }}'
+    mod_timestamp: "{{ .CommitTimestamp }}"
     flags:
       - -trimpath
     ldflags:
@@ -15,22 +15,22 @@ builds:
       - darwin
 
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 
 signs:
   - id: checksums
     cmd: cosign
-    stdin: '{{ .Env.COSIGN_PASSWORD }}'
+    stdin: "{{ .Env.COSIGN_PASSWORD }}"
     output: true
     artifacts: checksum
-    signature: '${artifact}.sigstore.json'
+    signature: "${artifact}.sigstore.json"
     args:
       - sign-blob
       - --yes
       - --key
       - env://COSIGN_PRIVATE_KEY
-      - '--bundle=${signature}'
-      - '${artifact}'
+      - "--bundle=${signature}"
+      - "${artifact}"
 
 archives:
   - formats: [tar.gz]
@@ -49,5 +49,5 @@ changelog:
   sort: asc
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
+      - "^docs:"
+      - "^test:"

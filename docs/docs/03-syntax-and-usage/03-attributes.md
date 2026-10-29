@@ -35,7 +35,7 @@ Rendering the `page` component results in:
 ```
 
 :::note
-String values are automatically HTML attribute encoded. This is a security measure, but may make the values (especially JSON appear) look strange to you, since some characters may be converted into HTML entities. However, it is correct HTML and won't affect the behavior. 
+String values are automatically HTML attribute encoded. This is a security measure, but may make the values (especially JSON appear) look strange to you, since some characters may be converted into HTML entities. However, it is correct HTML and won't affect the behavior.
 :::
 
 It's also possible to use function calls in string attribute expressions.
@@ -93,7 +93,6 @@ templ component() {
 :::note
 templ is aware that `<hr/>` is a void element, and renders `<hr>` instead.
 :::
-
 
 To set boolean attributes using variables or template parameters, a question mark after the attribute name is used to denote that the attribute is boolean.
 
@@ -153,10 +152,10 @@ Use the `{ attrMap... }` syntax in the open tag of an element to append a dynami
 
 It's possible to spread any variable of type `templ.Attributes`. `templ.Attributes` is a `map[string]any` type definition.
 
-* If the value is a `string`, the attribute is added with the string value, e.g. `<div name="value">`.
-* If the value is a `bool`, the attribute is added as a boolean attribute if the value is true, e.g. `<div name>`.
-* If the value is a `templ.KeyValue[string, bool]`, the attribute is added if the boolean is true, e.g. `<div name="value">`.
-* If the value is a `templ.KeyValue[bool, bool]`, the attribute is added if both boolean values are true, as `<div name>`.
+- If the value is a `string`, the attribute is added with the string value, e.g. `<div name="value">`.
+- If the value is a `bool`, the attribute is added as a boolean attribute if the value is true, e.g. `<div name>`.
+- If the value is a `templ.KeyValue[string, bool]`, the attribute is added if the boolean is true, e.g. `<div name="value">`.
+- If the value is a `templ.KeyValue[bool, bool]`, the attribute is added if both boolean values are true, as `<div name>`.
 
 ```templ
 templ component(shouldBeUsed bool, attrs templ.Attributes) {
@@ -210,6 +209,7 @@ templ component(contact model.Contact) {
   </div>
 }
 ```
+
 :::
 
 :::note

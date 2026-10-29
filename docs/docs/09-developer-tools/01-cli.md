@@ -119,18 +119,18 @@ By default, `templ lsp` starts its own instance of gopls. However, gopls support
 A number of additional options are provided to enable runtime logging and profiling tools.
 
 ```
-  -goplsLog string
-        The file to log gopls output, or leave empty to disable logging.
-  -goplsRPCTrace
-        Set gopls to log input and output messages.
-  -gopls-remote
-        Specify remote gopls instance to connect to.
-  -help
-        Print help and exit.
-  -http string
-        Enable http debug server by setting a listen address (e.g. localhost:7474)
-  -log string
-        The file to log templ LSP output to, or leave empty to disable logging.
-  -pprof
-        Enable pprof web server (default address is localhost:9999)
+-goplsLog string
+      The file to log gopls output, or leave empty to disable logging.
+-goplsRPCTrace
+      Set gopls to log input and output messages.
+-gopls-remote
+      Specify remote gopls instance to connect to.
+-help
+      Print help and exit.
+-http string
+      Enable http debug server by setting a listen address (e.g. localhost:7474)
+-log string
+      The file to log templ LSP output to, or leave empty to disable logging.
+-pprof
+      Enable pprof web server (default address is localhost:9999)
 ```

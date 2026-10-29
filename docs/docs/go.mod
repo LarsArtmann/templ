@@ -1,6 +1,6 @@
 module github.com/a-h/templ/docs
 
-go 1.20
+go 1.26
 
 require github.com/gosimple/slug v1.13.1
 

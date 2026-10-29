@@ -4,7 +4,6 @@
 
 ![templ](ide-demo.gif)
 
-
 ## Documentation
 
 See user documentation at https://templ.guide
@@ -192,4 +191,3 @@ Directory: docs
 ```sh
 npm run build
 ```
-

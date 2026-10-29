@@ -76,11 +76,11 @@ templ templCounterExampleInitialContents(signals TemplCounterSignals) {
 ```
 
 :::tip
-Note that Datastar sends all[^1] signals to the server (as JSON) on each request. This means far less bookkeeping and more predictable state management than when using html forms. 
+Note that Datastar sends all[^1] signals to the server (as JSON) on each request. This means far less bookkeeping and more predictable state management than when using html forms.
 :::
 
 :::note
-[`data-signals`](https://data-star.dev/reference/attributes#data-signals) is a Datastar attribute that patches (adds, updates or removes) one or more signals into the existing signals. In the example, we store `$global` and `$user` when we initially render the container. 
+[`data-signals`](https://data-star.dev/reference/attributes#data-signals) is a Datastar attribute that patches (adds, updates or removes) one or more signals into the existing signals. In the example, we store `$global` and `$user` when we initially render the container.
 
 `data-on:click="@post('/examples/templ_counter/increment/global')"` is an attribute expression that says "When this element is clicked, send a POST request to the server to the specified URL". The `@post` is an action that is a sandboxed function that knows about things like signals.
 

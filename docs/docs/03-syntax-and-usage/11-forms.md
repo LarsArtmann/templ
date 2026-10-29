@@ -82,6 +82,7 @@ In your form templates, include a hidden CSRF token field using a shared compone
 ```
 
 This ensures all POST requests include a valid CSRF token.
+
 ```templ
 templ View(m Model) {
   <h1>Add Contact</h1>
@@ -259,7 +260,6 @@ mux.Handle("/contacts/delete/{id}", cdh)
 
 The `static` directory contains scripts, CSS and images, and is served using Go's built in file serving handler.
 
-
 ```go title="main.go"
 mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 ```
@@ -366,7 +366,6 @@ templ ContactList(contacts []db.Contact) {
 For simple views, there's no need to create a view model (a struct that defines the data that will be displayed) and you can pass the data directly, but for more complex views or when you need to pass additional data to the template, it's usually clearer to define a view model.
 :::
 
-
 ### Layout
 
 The `layout` package provides a common structure for all pages, including links to static assets like CSS and JavaScript files.
@@ -429,7 +428,6 @@ func (h *Handler) Get(w http.ResponseWriter, r *http.Request) {
 
 Note that the `ModelFromContact` function is used to convert a `db.Contact` into a view model (`Model`) that can be used to populate the form fields.
 
-
 The `DisplayForm` method handles rendering the form view and is used by both the `Get` and `Post` methods. It uses the `layout.Handler` to ensure that the form is rendered within the common layout of the application.
 
 ```go title="routes/contactsedit/handler.go"
@@ -439,7 +437,6 @@ func (h *Handler) DisplayForm(w http.ResponseWriter, r *http.Request, m Model) {
 ```
 
 For `Post` requests, the handler parses the form data into the model, validates it, and saves the contact to the database. If validation fails, it redisplays the form with error messages.
-
 
 ```go title="routes/contactsedit/handler.go"
 func (h *Handler) Post(w http.ResponseWriter, r *http.Request) {

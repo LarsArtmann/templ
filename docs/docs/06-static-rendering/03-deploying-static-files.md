@@ -4,11 +4,11 @@ Once you have built static HTML files with templ, you can serve them on any stat
 
 Ways you could host your site include:
 
-* Fly.io
-* Netlify
-* Vercel
-* AWS Amplify
-* Firebase Hosting
+- Fly.io
+- Netlify
+- Vercel
+- AWS Amplify
+- Firebase Hosting
 
 Typically specialist static hosting services are more cost-effective than VM or Docker-based services, due to the less complex compute and networking requirements.
 
@@ -27,4 +27,3 @@ ENTRYPOINT ["/goStatic", "-port", "8080"]
 ```
 
 More detailed documentation is available at https://fly.io/docs/languages-and-frameworks/static/
-

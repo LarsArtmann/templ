@@ -6,8 +6,8 @@
 
 Using htmx requires:
 
-* Installation of the htmx client-side library.
-* Modifying the HTML markup to instruct the library to perform partial screen updates.
+- Installation of the htmx client-side library.
+- Modifying the HTML markup to instruct the library to perform partial screen updates.
 
 ## Installation
 

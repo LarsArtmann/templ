@@ -21,4 +21,3 @@ templ generate
 ```
 go run .
 ```
-

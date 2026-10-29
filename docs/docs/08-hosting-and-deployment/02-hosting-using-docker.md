@@ -96,4 +96,3 @@ The https://github.com/a-h/templ/tree/main/examples/counter-basic example is dep
 :::note
 This sample application stores the counts in RAM. If the server restarts, all of the information is lost. To avoid this, use a data store such as DynamoDB or Cloud Firestore. See https://github.com/a-h/templ/tree/main/examples/counter for an example of this.
 :::
-

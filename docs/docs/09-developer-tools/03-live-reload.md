@@ -98,7 +98,7 @@ In order for templ to successfully inject the reload JavaScript into the HTML re
 - The HTML must have a `<body>` tag.
 - The HTML must be served with a `Content-Type` of `text/html`.
 - The response must be compressed with no compression, or a supported compression algorithm (e.g. gzip).
-:::
+  :::
 
 ### Using HTTPS with the proxy
 
@@ -111,10 +111,11 @@ templ generate --watch --proxy="http://localhost:8080" --cmd="go run ." --proxy-
 This will start the proxy on `https://localhost:7331` instead of `http://localhost:7331`.
 
 :::note
+
 - Both `--proxy-tls-crt` and `--proxy-tls-key` flags must be provided together.
 - The flags can only be used when the `--proxy` flag is also specified.
 - For self-signed certificates on localhost, the browser will show a security warning. You can proceed by clicking "Advanced" and then "Continue" (or the equivalent for your browser).
-:::
+  :::
 
 ## Live reload process
 

@@ -14,14 +14,14 @@ For issues, it really helps if you provide a reproduction repo, or can create a 
 
 In designs, we need to consider:
 
-* Backwards compatibility - Not changing the public API between releases, introducing gradual deprecation - don't break people's code.
-* Correctness over time - How can we reduce the risk of defects both now, and in future releases?
-* Threat model - How could each change be used to inject vulnerabilities into web pages?
-* Go version - We target the oldest supported version of Go as per https://go.dev/doc/devel/release
-* Automatic migration - If we need to force through a change.
-* Compile time vs runtime errors - Prefer compile time.
-* Documentation - New features are only useful if people can understand the new feature, what would the documentation look like?
-* Examples - How will we demonstrate the feature?
+- Backwards compatibility - Not changing the public API between releases, introducing gradual deprecation - don't break people's code.
+- Correctness over time - How can we reduce the risk of defects both now, and in future releases?
+- Threat model - How could each change be used to inject vulnerabilities into web pages?
+- Go version - We target the oldest supported version of Go as per https://go.dev/doc/devel/release
+- Automatic migration - If we need to force through a change.
+- Compile time vs runtime errors - Prefer compile time.
+- Documentation - New features are only useful if people can understand the new feature, what would the documentation look like?
+- Examples - How will we demonstrate the feature?
 
 ## Project structure
 
@@ -222,11 +222,11 @@ If you run `xc` you can get see a list of the development tasks that can be run,
 
 The most useful tasks for local development are:
 
-* `install-snapshot` - this builds the templ CLI and installs it into `~/bin`. Ensure that this is in your path.
-* `test` - this regenerates all templates, and runs the unit tests.
-* `fmt` - run the `gofmt` tool to format all Go code.
-* `lint` - run the same linting as run in the CI process.
-* `docs-run` - run the Docusaurus documentation site.
+- `install-snapshot` - this builds the templ CLI and installs it into `~/bin`. Ensure that this is in your path.
+- `test` - this regenerates all templates, and runs the unit tests.
+- `fmt` - run the `gofmt` tool to format all Go code.
+- `lint` - run the same linting as run in the CI process.
+- `docs-run` - run the Docusaurus documentation site.
 
 ### Commit messages
 
@@ -234,13 +234,13 @@ The project using https://www.conventionalcommits.org/en/v1.0.0/
 
 Examples:
 
-* `feat: support Go comments in templates, fixes #234"`
+- `feat: support Go comments in templates, fixes #234"`
 
 ### Coding style
 
-* Reduce nesting - i.e. prefer early returns over an `else` block, as per https://danp.net/posts/reducing-go-nesting/ or https://go.dev/doc/effective_go#if
-* Use line breaks to separate "paragraphs" of code - don't use line breaks in between lines, or at the start/end of functions etc.
-* Use the `fmt` and `lint` build tasks to format and lint your code before submitting a PR.
+- Reduce nesting - i.e. prefer early returns over an `else` block, as per https://danp.net/posts/reducing-go-nesting/ or https://go.dev/doc/effective_go#if
+- Use line breaks to separate "paragraphs" of code - don't use line breaks in between lines, or at the start/end of functions etc.
+- Use the `fmt` and `lint` build tasks to format and lint your code before submitting a PR.
 
 ### LLM instructions
 

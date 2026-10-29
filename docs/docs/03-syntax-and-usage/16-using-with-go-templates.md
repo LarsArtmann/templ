@@ -38,7 +38,7 @@ func main() {
 </html>
 ```
 
-## Using a templ component with	`html/template`
+## Using a templ component with`html/template`
 
 To use a templ component within a `html/template`, use the `templ.ToGoHTML` function to render the component into a `template.HTML value`.
 

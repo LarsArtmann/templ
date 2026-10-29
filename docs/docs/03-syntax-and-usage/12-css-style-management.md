@@ -36,14 +36,14 @@ templ button(style1, style2 string, text string) {
 
 The style attribute supports use of the following types:
 
-* `string` - A string containing CSS properties, e.g. `background-color: red`.
-* `templ.SafeCSS` - A value containing CSS properties and values that will not be sanitized, e.g. `background-color: red; text-decoration: underline`
-* `map[string]string` - A map of string keys to string values, e.g. `map[string]string{"color": "red"}`
-* `map[string]templ.SafeCSSProperty` - A map of string keys to values, where the values will not be sanitized.
-* `templ.KeyValue[string, string]` - A single CSS key/value.
-* `templ.KeyValue[string, templ.SafeCSSProperty` - A CSS key/value, but the value will not be sanitized.
-* `templ.KeyValue[string, bool]` - A map where the CSS in the key is only included in the output if the boolean value is true.
-* `templ.KeyValue[templ.SafeCSS, bool]` - A map where the CSS in the key is only included if the boolean value is true.
+- `string` - A string containing CSS properties, e.g. `background-color: red`.
+- `templ.SafeCSS` - A value containing CSS properties and values that will not be sanitized, e.g. `background-color: red; text-decoration: underline`
+- `map[string]string` - A map of string keys to string values, e.g. `map[string]string{"color": "red"}`
+- `map[string]templ.SafeCSSProperty` - A map of string keys to values, where the values will not be sanitized.
+- `templ.KeyValue[string, string]` - A single CSS key/value.
+- `templ.KeyValue[string, templ.SafeCSSProperty` - A CSS key/value, but the value will not be sanitized.
+- `templ.KeyValue[string, bool]` - A map where the CSS in the key is only included in the output if the boolean value is true.
+- `templ.KeyValue[templ.SafeCSS, bool]` - A map where the CSS in the key is only included if the boolean value is true.
 
 Finally, a function value that returns any of the above types can be used.
 
@@ -154,12 +154,12 @@ templ DraggableElement(x, y int) {
 
 ### Pattern use cases
 
-| Pattern | Best For | Example Use Case |
-|---------|----------|------------------|
-| **Maps** | Dynamic style sets requiring multiple computed values | Progress indicators, theme switching |
-| **KeyValue** | Conditional style toggling | Form validation, interactive states |
-| **Functions** | Complex style generation | Animations, data visualizations |
-| **Direct Strings** | Simple static styles | Basic formatting, utility classes |
+| Pattern            | Best For                                              | Example Use Case                     |
+| ------------------ | ----------------------------------------------------- | ------------------------------------ |
+| **Maps**           | Dynamic style sets requiring multiple computed values | Progress indicators, theme switching |
+| **KeyValue**       | Conditional style toggling                            | Form validation, interactive states  |
+| **Functions**      | Complex style generation                              | Animations, data visualizations      |
+| **Direct Strings** | Simple static styles                                  | Basic formatting, utility classes    |
 
 ### Sanitization behaviour
 
@@ -250,13 +250,13 @@ templ button(text string, className string) {
 
 Toggle addition of CSS classes to an element based on a boolean value by passing:
 
-* A `string` containing the name of a class to apply.
-* A `templ.KV` value containing the name of the class to add to the element, and a boolean that determines whether the class is added to the attribute at render time.
-  * `templ.KV("is-primary", true)`
-  * `templ.KV("hover:red", true)`
-* A map of string class names to a boolean that determines if the class is added to the class attribute value at render time:
-  * `map[string]bool`
-  * `map[CSSClass]bool`
+- A `string` containing the name of a class to apply.
+- A `templ.KV` value containing the name of the class to add to the element, and a boolean that determines whether the class is added to the attribute at render time.
+  - `templ.KV("is-primary", true)`
+  - `templ.KV("hover:red", true)`
+- A map of string class names to a boolean that determines if the class is added to the class attribute value at render time:
+  - `map[string]bool`
+  - `map[CSSClass]bool`
 
 ```templ title="component.templ"
 package main
@@ -433,7 +433,7 @@ To save bandwidth, templ can provide a global stylesheet that includes the outpu
 
 To provide a global stylesheet, use templ's CSS middleware, and register templ classes on application startup.
 
-The middleware adds a HTTP route to the web server (`/styles/templ.css` by default) that renders the `text/css` classes that would otherwise be added to `<style>` tags when components are rendered. 
+The middleware adds a HTTP route to the web server (`/styles/templ.css` by default) that renders the `text/css` classes that would otherwise be added to `<style>` tags when components are rendered.
 
 For example, to stop the `className` CSS class from being added to the output, the HTTP middleware can be used.
 

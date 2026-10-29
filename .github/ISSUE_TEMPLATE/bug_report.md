@@ -1,10 +1,9 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+title: ""
+labels: ""
+assignees: ""
 ---
 
 **Before you begin**
@@ -29,8 +28,9 @@ If the issue is related to IDE support, run through the LSP troubleshooting sect
 Run `templ info` and include the output.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. MacOS, Linux, Windows, WSL]
- - templ CLI version (`templ version`)
+
+- OS: [e.g. MacOS, Linux, Windows, WSL]
+- templ CLI version (`templ version`)
 - Go version (`go version`)
 - `gopls` version (`gopls version`)
 

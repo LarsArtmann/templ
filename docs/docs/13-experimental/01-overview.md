@@ -3,11 +3,12 @@
 Experimental Packages for templ are available at https://github.com/templ-go/x/
 
 :::warning
+
 - Packages in this module are experimental and may be removed at any time.
 - There is no guarantee of compatibility with future versions.
 - There is no guarantee of stability.
 - Use at your own risk.
-:::
+  :::
 
 ## Approval Process
 

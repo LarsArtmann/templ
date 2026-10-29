@@ -129,4 +129,3 @@ func main() {
 	Message().Render(context.Background(), os.Stdout)
 }
 ```
-

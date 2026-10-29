@@ -45,4 +45,3 @@ templ headerTemplate(name string) {
   </header>
 }
 ```
-

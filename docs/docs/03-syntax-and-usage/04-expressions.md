@@ -4,7 +4,7 @@
 
 Within a templ element, expressions can be used to interpolate Go values. Content is automatically escaped using context-aware HTML encoding rules to protect against XSS and CSS injection attacks.
 
-Literals, variables and functions that return a value can be used. 
+Literals, variables and functions that return a value can be used.
 
 The supported types for interpolation are:
 
@@ -38,9 +38,9 @@ templ component() {
 
 Any supported Go variable can be used, for example:
 
-* A function parameter.
-* A field on a struct.
-* A variable or constant that is in scope.
+- A function parameter.
+- A field on a struct.
+- A variable or constant that is in scope.
 
 ```templ title="/main.templ"
 package main

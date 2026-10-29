@@ -2,8 +2,8 @@
 
 To test that data is rendered as expected, there are two main ways to do it:
 
-* Expectation testing - testing that specific expectations are met by the output.
-* Snapshot testing - testing that outputs match a pre-written output.
+- Expectation testing - testing that specific expectations are met by the output.
+- Snapshot testing - testing that outputs match a pre-written output.
 
 ## Expectation testing
 
@@ -92,7 +92,7 @@ To test the posts, we can use the same approach. We test that the posts are rend
 
 ### Testing whole pages
 
-Next, we may want to go a level higher and test the entire page. 
+Next, we may want to go a level higher and test the entire page.
 
 Pages are also templ components, so the tests are structured in the same way.
 
@@ -122,6 +122,7 @@ In the error case, the test asserts that the error message was displayed, while 
 Testing it again here would make the code resistant to refactoring and rework, but then again, we might have missed actually passing the posts we got back from the database to the posts template, so it’s a matter of risk appetite vs refactor resistance.
 
 Note the switch to the table-driven testing format, a popular approach in Go for testing multiple scenarios with the same test code.
+
 ```go
 func TestPostsHandler(t *testing.T) {
     tests := []struct {
