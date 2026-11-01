@@ -17,7 +17,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: DeterminateSystems/determinate-nix-action@e847f25223456b3058e12f7fc9d777b6a6f25060 # v3.23.2
+      - uses: DeterminateSystems/determinate-nix-action@92957199488000b908fdad19f63711000965d8f3 # v3.24.1
         with:
           diagnostic-endpoint: ""
 
@@ -63,7 +63,7 @@ jobs:
           name: coverage
 
       - name: Update coverage report
-        uses: ncruces/go-coverage-report@dfc237255099f2d25066babde51253992175e365 # v0.3.2
+        uses: ncruces/go-coverage-report@69fd9ab687d384cc6c78c31967e204abdfa21271 # v0.3.3
         with:
           coverage-file: coverage.out
           report: "true"
@@ -77,7 +77,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: DeterminateSystems/determinate-nix-action@e847f25223456b3058e12f7fc9d777b6a6f25060 # v3.23.2
+      - uses: DeterminateSystems/determinate-nix-action@92957199488000b908fdad19f63711000965d8f3 # v3.24.1
         with:
           diagnostic-endpoint: ""
 
@@ -100,7 +100,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: DeterminateSystems/determinate-nix-action@e847f25223456b3058e12f7fc9d777b6a6f25060 # v3.23.2
+      - uses: DeterminateSystems/determinate-nix-action@92957199488000b908fdad19f63711000965d8f3 # v3.24.1
         with:
           diagnostic-endpoint: ""
 
@@ -123,7 +123,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: DeterminateSystems/determinate-nix-action@e847f25223456b3058e12f7fc9d777b6a6f25060 # v3.23.2
+      - uses: DeterminateSystems/determinate-nix-action@92957199488000b908fdad19f63711000965d8f3 # v3.24.1
         with:
           diagnostic-endpoint: ""
 
