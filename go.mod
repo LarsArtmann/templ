@@ -3,7 +3,7 @@ module github.com/a-h/templ
 go 1.26.0
 
 require (
-	github.com/a-h/parse v0.0.0-20250122154542-74294addb73e
+	github.com/a-h/parse v0.0.0-20261027111828-db2689052003
 	github.com/andybalholm/brotli v1.2.7
 	github.com/cenkalti/backoff/v4 v4.3.0
 	github.com/cli/browser v1.3.0
@@ -14,7 +14,7 @@ require (
 	github.com/rs/cors v1.11.1
 	github.com/stretchr/testify v1.12.1
 	golang.org/x/mod v0.42.0
-	golang.org/x/net v0.61.0
+	golang.org/x/net v0.62.0
 	golang.org/x/sync v0.24.0
 	golang.org/x/tools v0.52.0
 )
